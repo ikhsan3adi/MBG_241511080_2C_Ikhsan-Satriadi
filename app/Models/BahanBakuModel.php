@@ -30,7 +30,39 @@ class BahanBakuModel extends Model
     protected array $castHandlers = [];
 
     // Dates
-    protected $useTimestamps = true;
+    protected $useTimestamps = false;
     protected $dateFormat    = 'datetime';
-    protected $createdField  = 'created_at';
+
+    public function category(?string $kategori)
+    {
+        if (is_null($kategori)) return $this;
+
+        return $this->where('kategori', $kategori);
+    }
+
+    public function status(?string $status)
+    {
+        if (is_null($status)) return $this;
+
+        return $this->where('status', $status);
+    }
+
+    public function withPermintaanCount()
+    {
+        return $this->select('bahan_baku.*, COUNT(permintaan_detail.id) as permintaan_count')
+            ->join('permintaan_detail', 'bahan_baku.id = permintaan_detail.bahan_id', 'left')
+            ->groupBy('bahan_baku.id');
+    }
+
+    public function search(?string $keyword)
+    {
+        if (is_null($keyword)) return $this;
+
+        return $this->groupStart()
+            ->like('nama', $keyword)
+            ->orLike('kategori', $keyword)
+            ->orLike('satuan', $keyword)
+            ->orLike('status', $keyword)
+            ->groupEnd();
+    }
 }

@@ -23,6 +23,7 @@ $routes->group(
             ['filter' => ['webrole:gudang']],
             static function (RouteCollection $routes) {
                 $routes->get('/', 'Admin\BahanBakuController::index');
+                $routes->get('bahanbaku', 'Admin\BahanBakuController::index');
             }
         );
 
@@ -50,8 +51,18 @@ $routes->group(
         //? Role Gudang / Admin
         $routes->group(
             'admin',
-            ['filter' => ['apirole:gudang']],
-            static function (RouteCollection $routes) {}
+            ['filter' => ['apirole:gudang'], 'namespace' => 'App\Controllers\Api\Admin'],
+            static function (RouteCollection $routes) {
+
+                //? Resource Bahan Baku
+                $routes->group('bahanbaku', static function (RouteCollection $routes) {
+                    $routes->get('/', 'BahanBakuController::index'); // Mendapatkan bahan baku
+                    $routes->get('(:segment)', 'BahanBakuController::show/$1'); // Mendapatkan detail bahan baku
+                    $routes->post('/', 'BahanBakuController::create'); // Memproses tambah bahan baku
+                    $routes->put('(:segment)', 'BahanBakuController::update/$1'); // Memproses edit bahan baku
+                    $routes->delete('/', 'BahanBakuController::delete'); // Menghapus data bahan baku (individu/massal)
+                });
+            }
         );
 
         //? Role Dapur / User

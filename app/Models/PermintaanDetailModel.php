@@ -25,4 +25,14 @@ class PermintaanDetailModel extends Model
     protected $useTimestamps = true;
     protected $dateFormat    = 'datetime';
     protected $createdField  = 'created_at';
+
+    public function getAllPermintaanByBahanBakuId($bahanId)
+    {
+        return $this->select('permintaan.*, permintaan_detail.jumlah_diminta, user.name as pemohon')
+            ->join('permintaan', 'permintaan.id = permintaan_detail.permintaan_id', 'left')
+            ->join('user', 'user.id = permintaan.pemohon_id', 'left')
+            ->where('bahan_id', $bahanId)
+            ->orderBy('permintaan.created_at', 'DESC')
+            ->asArray()->findAll();
+    }
 }
