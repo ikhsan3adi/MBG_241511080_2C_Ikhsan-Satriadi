@@ -351,14 +351,15 @@
 
         formModalEl.querySelector('#modal-confirm').addEventListener('click', async function() {
             try {
-                formModalEl.querySelector('#modal-confirm').setAttribute('disabled', 'true');
-                formModalEl.querySelector('#modal-confirm').textContent = 'Menyimpan...';
+                const formModalConfirmButton = formModalEl.querySelector('#modal-confirm');
+                formModalConfirmButton.setAttribute('disabled', 'true');
+                formModalConfirmButton.textContent = 'Menyimpan...';
 
                 const formAction = document.getElementById('id_bahan_baku').value ? 'edit' : 'create';
                 const res = await submitForm(formAction);
 
-                formModalEl.querySelector('#modal-confirm').removeAttribute('disabled');
-                formModalEl.querySelector('#modal-confirm').textContent = 'Simpan';
+                formModalConfirmButton.removeAttribute('disabled');
+                formModalConfirmButton.textContent = 'Simpan';
 
                 if (!res) return;
 
@@ -366,6 +367,8 @@
                 showAlert(alertParent, res.message ?? 'Berhasil', 'success');
                 searchBahanBaku().then(renderTable);
             } catch (error) {
+                formModalConfirmButton.removeAttribute('disabled');
+                formModalConfirmButton.textContent = 'Simpan';
                 showAlert(alertParent, error.message, 'danger');
             }
 
