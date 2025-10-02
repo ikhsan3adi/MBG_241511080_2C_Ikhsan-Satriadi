@@ -250,7 +250,7 @@ class BahanBakuController extends BaseApiController
                 status: 200,
                 data: [
                     'error' => false,
-                    'message' => 'Bahan baku berhasil dihapus.',
+                    'message' => 'Bahan baku kadaluarsa berhasil dihapus.',
                     'data' => [
                         'deleted_ids' => $idsToDelete
                     ]
@@ -285,7 +285,7 @@ class BahanBakuController extends BaseApiController
         return [
             'nama' => 'required|min_length[3]|max_length[255]',
             'kategori' => 'required|min_length[3]|max_length[100]',
-            'jumlah' => 'required|integer|greater_than[0]',
+            'jumlah' => 'required|integer|greater_than_equal_to[0]',
             'satuan' => 'required|min_length[1]|max_length[50]',
             'tanggal_masuk' => 'required|valid_date[Y-m-d]',
             'tanggal_kadaluarsa' => 'required|valid_date[Y-m-d]',
