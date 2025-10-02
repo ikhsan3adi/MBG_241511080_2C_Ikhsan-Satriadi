@@ -143,11 +143,49 @@
     }
 
     async function approvePermintaan(id) {
+        return await fetch(`${PERMINTAAN_ENDPOINT}/${id}/approve`, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Authorization': 'Bearer ' + localStorage.getItem('jwt_token'),
+                },
+            })
+            .then(response => {
+                if (response.status >= 500) throw new Error('Gagal memproses permintaan. Status: ' + response.status);
+                return response.json();
+            })
+            .then(json => {
+                console.log(json);
 
+                if (json.error) {
+                    console.error(json);
+                    throw new Error(json.message);
+                }
+                return json;
+            });
     }
 
     async function rejectPermintaan(id) {
+        return await fetch(`${PERMINTAAN_ENDPOINT}/${id}/reject`, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Authorization': 'Bearer ' + localStorage.getItem('jwt_token'),
+                },
+            })
+            .then(response => {
+                if (response.status >= 500) throw new Error('Gagal memproses permintaan. Status: ' + response.status);
+                return response.json();
+            })
+            .then(json => {
+                console.log(json);
 
+                if (json.error) {
+                    console.error(json);
+                    throw new Error(json.message);
+                }
+                return json;
+            });
     }
 
     document.addEventListener('DOMContentLoaded', async function() {
