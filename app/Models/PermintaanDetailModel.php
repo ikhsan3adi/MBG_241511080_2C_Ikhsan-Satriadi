@@ -22,9 +22,8 @@ class PermintaanDetailModel extends Model
     protected bool $updateOnlyChanged = true;
 
     // Dates
-    protected $useTimestamps = true;
+    protected $useTimestamps = false;
     protected $dateFormat    = 'datetime';
-    protected $createdField  = 'created_at';
 
     public function getAllPermintaanByBahanBakuId($bahanId)
     {
@@ -33,6 +32,14 @@ class PermintaanDetailModel extends Model
             ->join('user', 'user.id = permintaan.pemohon_id', 'left')
             ->where('bahan_id', $bahanId)
             ->orderBy('permintaan.created_at', 'DESC')
+            ->asArray()->findAll();
+    }
+
+    public function getAllDetailByPermintaanId($permintaanId)
+    {
+        return $this->select('permintaan_detail.*, bahan_baku.*')
+            ->join('bahan_baku', 'bahan_baku.id = permintaan_detail.bahan_id', 'left')
+            ->where('permintaan_id', $permintaanId)
             ->asArray()->findAll();
     }
 }

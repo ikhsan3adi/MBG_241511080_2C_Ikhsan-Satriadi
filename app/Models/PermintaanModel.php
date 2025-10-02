@@ -25,7 +25,37 @@ class PermintaanModel extends Model
     protected bool $updateOnlyChanged = true;
 
     // Dates
-    protected $useTimestamps = true;
+    protected $useTimestamps = false;
     protected $dateFormat    = 'datetime';
-    protected $createdField  = 'created_at';
+
+    public function status(?string $status)
+    {
+        if (is_null($status)) return $this;
+
+        return $this->where('status', $status);
+    }
+
+    public function withPemohon()
+    {
+        return $this->select('permintaan.*, user.name as pemohon')
+            ->join('user', 'user.id = permintaan.pemohon_id');
+    }
+
+    public function search(?string $keyword, bool $withUser = true)
+    {
+        if (is_null($keyword)) return $this;
+
+        $this->groupStart()
+            ->like('menu_makan', $keyword)
+            ->orLike('status', $keyword);
+
+        if ($withUser) $this->orLike('user.name', $keyword);
+
+        return $this->groupEnd();
+    }
+
+    public function approvePermintaan($id)
+    {
+        return $this->update($id, ['status' => 'disetujui']);
+    }
 }

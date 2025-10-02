@@ -24,6 +24,8 @@ $routes->group(
             static function (RouteCollection $routes) {
                 $routes->get('/', 'Admin\BahanBakuController::index');
                 $routes->get('bahanbaku', 'Admin\BahanBakuController::index');
+
+                $routes->get('permintaan', 'Admin\PermintaanController::index');
             }
         );
 
@@ -61,6 +63,14 @@ $routes->group(
                     $routes->post('/', 'BahanBakuController::create'); // Memproses tambah bahan baku
                     $routes->put('(:segment)', 'BahanBakuController::update/$1'); // Memproses edit bahan baku
                     $routes->delete('/', 'BahanBakuController::delete'); // Menghapus data bahan baku (individu/massal)
+                });
+
+                //? Resource Permintaan
+                $routes->group('permintaan', static function (RouteCollection $routes) {
+                    $routes->get('/', 'PermintaanController::index'); // Mendapatkan permintaan
+                    $routes->get('(:segment)', 'PermintaanController::show/$1'); // Mendapatkan detail permintaan
+                    $routes->post('(:segment)/approve', 'PermintaanController::approve/$1'); // Menyetujui permintaan
+                    $routes->post('(:segment)/reject', 'PermintaanController::reject/$1'); // Menolak permintaan
                 });
             }
         );

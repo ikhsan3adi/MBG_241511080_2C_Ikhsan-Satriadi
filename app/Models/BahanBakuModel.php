@@ -65,4 +65,18 @@ class BahanBakuModel extends Model
             ->orLike('status', $keyword)
             ->groupEnd();
     }
+
+    public function updateJumlah($id, $jumlah)
+    {
+        $status = 'tersedia';
+        if ($jumlah <= 0) {
+            $status = 'habis';
+            $jumlah = 0;
+        }
+
+        return $this->update($id, [
+            'jumlah' => $jumlah,
+            'status' => $status
+        ]);
+    }
 }
