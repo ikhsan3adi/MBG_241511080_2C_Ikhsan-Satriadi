@@ -123,6 +123,7 @@ _modules/*
 .vscode/*
 !.vscode/settings.json
 !.vscode/api-guide.md
+!.vscode/todo.md
 
 /results/
 /phpunit*.xml

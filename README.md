@@ -11,7 +11,7 @@
 
 ### Deskripsi Proyek
 
-Sistem Pemantauan Bahan Baku MBG (Makan Bergizi Gratis) dibuat untuk memudahkan pengelolaan bahan baku makanan mengingat banyaknya kasus keracunan makanan yang terjadi.
+Sistem Pemantauan Bahan Baku MBG (Makan Bergizi Gratis) dibuat untuk memudahkan pengawasan dan pengelolaan bahan baku makanan mengingat banyaknya kasus keracunan makanan yang terjadi.
 
 ### Teknologi yang Digunakan
 
@@ -27,13 +27,13 @@ Sistem Pemantauan Bahan Baku MBG (Makan Bergizi Gratis) dibuat untuk memudahkan 
 | --------------------------- | ----------------------------------- |
 | ![login](./image/login.png) | ![bahanbaku](./image/bahanbaku.png) |
 
-| Permintaan Bahan Baku (Gudang)                              | Detail Permintaan (Dapur/Gudang)                    |
-| ----------------------------------------------------------- | --------------------------------------------------- |
-| ![list-permintaan-dapur](./image/list-permintaan-dapur.png) | ![detail-permintaan](./image/detail-permintaan.png) |
+| Permintaan Bahan Baku (Gudang)                                | Permintaan Bahan Baku (Dapur)                               |
+| ------------------------------------------------------------- | ----------------------------------------------------------- |
+| ![list-permintaan-gudang](./image/list-permintaan-gudang.png) | ![list-permintaan-dapur](./image/list-permintaan-dapur.png) |
 
-| Tambah Permintaan Bahan Baku (Dapur)                            |
-| --------------------------------------------------------------- |
-| ![tambah-permintaan-dapur](./image/tambah-permintaan-dapur.png) |
+| Detail Permintaan (Dapur/Gudang)                    | Tambah Permintaan Bahan Baku (Dapur)                            |
+| --------------------------------------------------- | --------------------------------------------------------------- |
+| ![detail-permintaan](./image/detail-permintaan.png) | ![tambah-permintaan-dapur](./image/tambah-permintaan-dapur.png) |
 
 ### Cara Menjalankan
 
@@ -45,7 +45,9 @@ Sistem Pemantauan Bahan Baku MBG (Makan Bergizi Gratis) dibuat untuk memudahkan 
    composer install
    ```
 
-3. Buat database baru di MySQL bernama `mbg_db` (bisa disesuaikan di `.env`) dan impor file SQL yang telah disediakan.
+3. Buat database baru di MySQL bernama `mbg_db` (bisa disesuaikan di `.env`) dan impor [file SQL](mbg_db.sql) yang telah disediakan.
+
+    > Sampel data instance terdapat di [mbg_db_data_instance.sql](mbg_db_data_instance.sql).
 
 4. Salin file `env` dan rename menjadi `.env` dan sesuaikan konfigurasi database sesuai dengan pengaturan lokal Anda.
 
