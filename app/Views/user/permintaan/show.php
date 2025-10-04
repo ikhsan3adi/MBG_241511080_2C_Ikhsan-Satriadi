@@ -37,7 +37,8 @@
                             <tr>
                                 <th scope="col">Nama Bahan</th>
                                 <th scope="col">Kategori</th>
-                                <th scope="col">Jumlah</th>
+                                <th scope="col">Tersedia</th>
+                                <th scope="col">Jml Diminta</th>
                                 <th scope="col">Tgl Masuk</th>
                                 <th scope="col">Tgl Kadaluarsa</th>
                                 <th scope="col">Status</th>
@@ -49,6 +50,7 @@
                             <td id="nama">-</td>
                             <td id="kategori">-</td>
                             <td id="jumlah">-</td>
+                            <td id="jumlah_diminta">-</td>
                             <td id="tanggal_masuk">-</td>
                             <td id="tanggal_kadaluarsa">-</td>
                             <td id="status">
@@ -56,7 +58,7 @@
                             </td>
                         </tr>
                         <tr id="no-data-detail-row-template" class="d-none">
-                            <td colspan="6" class="text-center text-muted">
+                            <td colspan="7" class="text-center text-muted">
                                 Tidak ada data
                             </td>
                         </tr>
@@ -158,6 +160,7 @@
                 row.querySelector('#nama').innerText = item.nama || '-';
                 row.querySelector('#kategori').innerText = item.kategori || '-';
                 row.querySelector('#jumlah').innerText = `${item.jumlah} ${item.satuan}`;
+                row.querySelector('#jumlah_diminta').innerText = `${item.jumlah_diminta} ${item.satuan}`;
 
                 row.querySelector('#tanggal_masuk').innerText = item.tanggal_masuk ?
                     new Date(item.tanggal_masuk).toLocaleDateString('id-ID', {

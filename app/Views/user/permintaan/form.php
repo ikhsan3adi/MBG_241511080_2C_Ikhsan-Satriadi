@@ -1,39 +1,44 @@
 <form id="permintaan-form" class="needs-validation" novalidate>
-    <div class="row g-3">
-        <div class="col-md-6">
-            <label for="tgl_masak" class="form-label">Tanggal Masak</label>
-            <input type="date" class="form-control" id="tgl_masak" name="tgl_masak" required>
-            <div class="invalid-feedback">Tanggal masak wajib diisi dan harus H-1.</div>
-        </div>
+    <div class="row g-4">
+        <div class="col-lg-6">
+            <div class=" row g-3">
+                <div class="col-md-6">
+                    <label for="tgl_masak" class="form-label">Tanggal Masak</label>
+                    <input type="date" class="form-control" id="tgl_masak" name="tgl_masak" required>
+                    <div class="invalid-feedback">Tanggal masak wajib diisi dan harus H-1.</div>
+                </div>
 
-        <div class="col-md-6">
-            <label for="jumlah_porsi" class="form-label">Jumlah Porsi</label>
-            <input type="number" class="form-control" id="jumlah_porsi" name="jumlah_porsi" min="1" required>
-            <div class="invalid-feedback">Jumlah porsi wajib diisi dan harus berupa angka positif.</div>
-        </div>
+                <div class="col-md-6">
+                    <label for="jumlah_porsi" class="form-label">Jumlah Porsi</label>
+                    <input type="number" class="form-control" id="jumlah_porsi" name="jumlah_porsi" min="1" required>
+                    <div class="invalid-feedback">Jumlah porsi wajib diisi dan harus berupa angka positif.</div>
+                </div>
 
-        <div class="col-12">
-            <label for="menu_makan" class="form-label">Menu Makan</label>
-            <input type="text" class="form-control" id="menu_makan" name="menu_makan" placeholder="Contoh: Ayam Goreng" required>
-            <div class="invalid-feedback">Menu makan wajib diisi.</div>
-        </div>
-
-        <div class="col-12">
-            <hr>
-            <div class="d-flex justify-content-between align-items-center mb-3">
-                <label class="form-label mb-0">Detail Bahan</label>
-                <button type="button" id="add-detail-bahan" class="btn btn-sm btn-primary">
-                    <i class="bi bi-plus-circle"></i> Tambah Bahan
-                </button>
+                <div class="col-12">
+                    <label for="menu_makan" class="form-label">Menu Makan</label>
+                    <input type="text" class="form-control" id="menu_makan" name="menu_makan" placeholder="Contoh: Ayam Goreng" required>
+                    <div class="invalid-feedback">Menu makan wajib diisi.</div>
+                </div>
             </div>
+        </div>
+        <div class="col-lg-6 row g-3">
+            <div class="col-12">
+                <div class="d-flex justify-content-between align-items-center mb-3">
+                    <label class="form-label mb-0">Detail Bahan</label>
+                    <button type="button" id="add-detail-bahan" class="btn btn-sm btn-primary">
+                        <i class="bi bi-plus-circle"></i> Tambah Bahan
+                    </button>
+                </div>
 
-            <div id="detail-bahan-error" class="alert alert-danger d-none">
-                Minimal harus ada 1 bahan yang diminta.
+                <div id="detail-bahan-error" class="alert alert-danger d-none">
+                    Minimal harus ada 1 bahan yang diminta.
+                </div>
+
+                <div id="detail-bahan-container"></div>
             </div>
-
-            <div id="detail-bahan-container"></div>
         </div>
     </div>
+
 </form>
 
 <!-- Template untuk detail bahan -->
