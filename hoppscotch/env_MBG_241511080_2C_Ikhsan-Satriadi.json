@@ -1,0 +1,19 @@
+{
+  "id": "yyakkdahfl",
+  "v": 2,
+  "name": "MBG_241511080_2C_Ikhsan-Satriadi",
+  "variables": [
+    {
+      "key": "jwt_token_gudang",
+      "secret": false,
+      "initialValue": "",
+      "currentValue": ""
+    },
+    {
+      "key": "jwt_token_dapur",
+      "secret": false,
+      "initialValue": "",
+      "currentValue": ""
+    }
+  ]
+}

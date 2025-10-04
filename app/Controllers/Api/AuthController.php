@@ -46,7 +46,7 @@ class AuthController extends BaseApiController
         }
 
         //! Salah password
-        if (! md5($password) === $user['password']) {
+        if (! (md5($password) === $user['password'])) {
             return $this->respond(
                 status: 401,
                 data: [

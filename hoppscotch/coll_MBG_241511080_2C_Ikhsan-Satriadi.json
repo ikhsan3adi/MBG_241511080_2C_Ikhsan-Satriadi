@@ -1,0 +1,420 @@
+{
+  "v": 10,
+  "name": "MBG_241511080_2C_Ikhsan-Satriadi",
+  "folders": [
+    {
+      "v": 10,
+      "name": "Admin (Gudang)",
+      "folders": [
+        {
+          "v": 10,
+          "name": "Bahan Baku",
+          "folders": [],
+          "requests": [
+            {
+              "v": "16",
+              "name": "Get All Bahan Baku",
+              "method": "GET",
+              "endpoint": "http://localhost:8080/api/admin/bahanbaku",
+              "params": [],
+              "headers": [],
+              "preRequestScript": "",
+              "testScript": "",
+              "auth": {
+                "authType": "inherit",
+                "authActive": true
+              },
+              "body": {
+                "contentType": null,
+                "body": null
+              },
+              "requestVariables": [],
+              "responses": {},
+              "_ref_id": "req_mgbmi2wa_35db6900-deec-454a-9e47-b9948124abca"
+            },
+            {
+              "v": "16",
+              "name": "Get Single Bahan Baku",
+              "method": "GET",
+              "endpoint": "http://localhost:8080/api/admin/bahanbaku/11",
+              "params": [],
+              "headers": [],
+              "preRequestScript": "",
+              "testScript": "",
+              "auth": {
+                "authType": "inherit",
+                "authActive": true
+              },
+              "body": {
+                "contentType": null,
+                "body": null
+              },
+              "requestVariables": [],
+              "responses": {},
+              "_ref_id": "req_mgbmiav5_7c85b28d-12e8-4b5d-b061-54351ecb2cfa"
+            },
+            {
+              "v": "16",
+              "name": "Create Bahan Baku",
+              "method": "POST",
+              "endpoint": "http://localhost:8080/api/admin/bahanbaku",
+              "params": [],
+              "headers": [],
+              "preRequestScript": "",
+              "testScript": "",
+              "auth": {
+                "authType": "inherit",
+                "authActive": true
+              },
+              "body": {
+                "contentType": "application/json",
+                "body": "{\n  \"nama\": \"Racun Tikus\",\n  \"kategori\": \"Protein Hewani\",\n  \"jumlah\": 0,\n  \"satuan\": \"kg\",\n  \"tanggal_masuk\": \"2025-10-01\",\n  \"tanggal_kadaluarsa\": \"2025-10-01\"\n}"
+              },
+              "requestVariables": [],
+              "responses": {},
+              "_ref_id": "req_mgbqpnko_d6d76ccd-24ea-4757-8db5-11b471f384c0"
+            },
+            {
+              "v": "16",
+              "name": "Update Bahan Baku",
+              "method": "PUT",
+              "endpoint": "http://localhost:8080/api/admin/bahanbaku/3",
+              "params": [],
+              "headers": [],
+              "preRequestScript": "",
+              "testScript": "",
+              "auth": {
+                "authType": "inherit",
+                "authActive": true
+              },
+              "body": {
+                "contentType": "application/json",
+                "body": "{\n  \"tanggal_kadaluarsa\": \"2025-10-01\"\n}"
+              },
+              "requestVariables": [],
+              "responses": {},
+              "_ref_id": "req_mgbqpnko_d6d76ccd-24ea-4757-8db5-11b471f384c0"
+            },
+            {
+              "v": "16",
+              "name": "Bulk Delete Bahan Baku",
+              "method": "DELETE",
+              "endpoint": "http://localhost:8080/api/admin/bahanbaku",
+              "params": [],
+              "headers": [],
+              "preRequestScript": "",
+              "testScript": "",
+              "auth": {
+                "authType": "inherit",
+                "authActive": true
+              },
+              "body": {
+                "contentType": "application/json",
+                "body": "{\"selected\":[\"1\",\"2\",\"3\",\"5\",\"6\",\"7\",\"8\",\"9\",\"10\",\"13\"]}"
+              },
+              "requestVariables": [],
+              "responses": {},
+              "_ref_id": "req_mgbs1gf2_33f56188-a874-4ce8-a990-d4836c1b8203"
+            }
+          ],
+          "auth": {
+            "authType": "inherit",
+            "authActive": true
+          },
+          "headers": [],
+          "variables": [],
+          "_ref_id": "coll_mgbmhuth_4ceb384d-dadf-443f-9ec4-62e47514a2a2"
+        },
+        {
+          "v": 10,
+          "name": "Permintaan",
+          "folders": [],
+          "requests": [
+            {
+              "v": "16",
+              "name": "Get All Permintaan",
+              "method": "GET",
+              "endpoint": "http://localhost:8080/api/admin/permintaan",
+              "params": [
+                {
+                  "key": "status",
+                  "value": "ditolak",
+                  "active": false,
+                  "description": ""
+                },
+                {
+                  "key": "search",
+                  "value": "Andi",
+                  "active": false,
+                  "description": ""
+                }
+              ],
+              "headers": [],
+              "preRequestScript": "",
+              "testScript": "",
+              "auth": {
+                "authType": "inherit",
+                "authActive": true
+              },
+              "body": {
+                "contentType": null,
+                "body": null
+              },
+              "requestVariables": [],
+              "responses": {},
+              "_ref_id": "req_mgc655im_5599e175-1f21-4ab8-995a-a1122bf4bb82"
+            },
+            {
+              "v": "16",
+              "name": "Get Single Permintaan",
+              "method": "GET",
+              "endpoint": "http://localhost:8080/api/admin/permintaan/3",
+              "params": [],
+              "headers": [],
+              "preRequestScript": "",
+              "testScript": "",
+              "auth": {
+                "authType": "inherit",
+                "authActive": true
+              },
+              "body": {
+                "contentType": null,
+                "body": null
+              },
+              "requestVariables": [],
+              "responses": {},
+              "_ref_id": "req_mgc655im_5599e175-1f21-4ab8-995a-a1122bf4bb82"
+            },
+            {
+              "v": "16",
+              "name": "Approve Permintaan",
+              "method": "POST",
+              "endpoint": "http://localhost:8080/api/admin/permintaan/3/approve",
+              "params": [],
+              "headers": [],
+              "preRequestScript": "",
+              "testScript": "",
+              "auth": {
+                "authType": "inherit",
+                "authActive": true
+              },
+              "body": {
+                "contentType": null,
+                "body": null
+              },
+              "requestVariables": [],
+              "responses": {},
+              "_ref_id": "req_mgc80fwx_a22568ed-53d1-443b-8d58-76136951574d"
+            },
+            {
+              "v": "16",
+              "name": "Reject  Permintaan",
+              "method": "POST",
+              "endpoint": "http://localhost:8080/api/admin/permintaan/14/reject",
+              "params": [],
+              "headers": [],
+              "preRequestScript": "",
+              "testScript": "",
+              "auth": {
+                "authType": "inherit",
+                "authActive": true
+              },
+              "body": {
+                "contentType": null,
+                "body": null
+              },
+              "requestVariables": [],
+              "responses": {},
+              "_ref_id": "req_mgc80fwx_a22568ed-53d1-443b-8d58-76136951574d"
+            }
+          ],
+          "auth": {
+            "authType": "inherit",
+            "authActive": true
+          },
+          "headers": [],
+          "variables": [],
+          "_ref_id": "coll_mgc64wt8_3ffb2ca9-a1eb-4ab7-9aac-381e407f368b"
+        }
+      ],
+      "requests": [],
+      "auth": {
+        "authType": "bearer",
+        "token": "<<jwt_token_gudang>>",
+        "authActive": true
+      },
+      "headers": [],
+      "variables": [],
+      "_ref_id": "coll_mg3t9g2l_91c5fbd5-133a-46e8-86bf-337f423f6836"
+    },
+    {
+      "v": 10,
+      "name": "User (Dapur)",
+      "folders": [
+        {
+          "v": 10,
+          "name": "Permintaan",
+          "folders": [],
+          "requests": [
+            {
+              "v": "16",
+              "name": "Get All My Permintaan",
+              "method": "GET",
+              "endpoint": "http://localhost:8080/api/user/permintaan",
+              "params": [
+                {
+                  "key": "search",
+                  "value": "",
+                  "active": false,
+                  "description": ""
+                },
+                {
+                  "key": "status",
+                  "value": "ditolak",
+                  "active": false,
+                  "description": ""
+                }
+              ],
+              "headers": [],
+              "preRequestScript": "",
+              "testScript": "",
+              "auth": {
+                "authType": "inherit",
+                "authActive": true
+              },
+              "body": {
+                "contentType": null,
+                "body": null
+              },
+              "requestVariables": [],
+              "responses": {},
+              "_ref_id": "req_mgccduf1_190432a9-ea19-4247-bcb9-12ec8dd99160"
+            },
+            {
+              "v": "16",
+              "name": "Get Single Permintaan",
+              "method": "GET",
+              "endpoint": "http://localhost:8080/api/user/permintaan/1",
+              "params": [
+                {
+                  "key": "search",
+                  "value": "",
+                  "active": false,
+                  "description": ""
+                },
+                {
+                  "key": "status",
+                  "value": "ditolak",
+                  "active": false,
+                  "description": ""
+                }
+              ],
+              "headers": [],
+              "preRequestScript": "",
+              "testScript": "",
+              "auth": {
+                "authType": "inherit",
+                "authActive": true
+              },
+              "body": {
+                "contentType": null,
+                "body": null
+              },
+              "requestVariables": [],
+              "responses": {},
+              "_ref_id": "req_mgccduf1_190432a9-ea19-4247-bcb9-12ec8dd99160"
+            },
+            {
+              "v": "16",
+              "name": "Create Permintaan",
+              "method": "POST",
+              "endpoint": "http://localhost:8080/api/user/permintaan",
+              "params": [],
+              "headers": [],
+              "preRequestScript": "",
+              "testScript": "",
+              "auth": {
+                "authType": "inherit",
+                "authActive": true
+              },
+              "body": {
+                "contentType": "application/json",
+                "body": "{\n  \"tgl_masak\": \"2025-10-05\",\n  \"menu_makan\": \"Ayam Dokeh\",\n  \"jumlah_porsi\": 100,\n  \"detail_bahan\": [\n    {\n      \"bahan_id\": 2,\n      \"jumlah_diminta\": 10\n    }\n  ]\n}"
+              },
+              "requestVariables": [],
+              "responses": {},
+              "_ref_id": "req_mgcd88a6_570b793b-c671-4e8a-b0af-412fd752e778"
+            }
+          ],
+          "auth": {
+            "authType": "inherit",
+            "authActive": true
+          },
+          "headers": [],
+          "variables": [],
+          "_ref_id": "coll_mgccdkbt_96fa8593-eb8b-4075-b527-80b365ca5788"
+        }
+      ],
+      "requests": [],
+      "auth": {
+        "authType": "bearer",
+        "token": "<<jwt_token_dapur>>",
+        "authActive": true
+      },
+      "headers": [],
+      "variables": [],
+      "_ref_id": "coll_mgcc9zln_e2788a8f-f852-4864-9b41-716d41c98b4b"
+    }
+  ],
+  "requests": [
+    {
+      "v": "16",
+      "name": "Login Gudang",
+      "method": "POST",
+      "endpoint": "http://localhost:8080/api/login",
+      "params": [],
+      "headers": [],
+      "preRequestScript": "",
+      "testScript": "// Set an environment variable\npw.env.set(\"jwt_token_gudang\", pw.response.body[\"jwt_token\"]);",
+      "auth": {
+        "authType": "inherit",
+        "authActive": true
+      },
+      "body": {
+        "contentType": "application/json",
+        "body": "{\n  \"email\": \"budi.gudang@mbg.id\",\n  \"password\": \"pass123\"\n}"
+      },
+      "requestVariables": [],
+      "responses": {},
+      "_ref_id": "req_mgbmh4mv_7aa909f1-575f-48f8-822e-3dd30cb2c664"
+    },
+    {
+      "v": "16",
+      "name": "Login Dapur",
+      "method": "POST",
+      "endpoint": "http://localhost:8080/api/login",
+      "params": [],
+      "headers": [],
+      "preRequestScript": "",
+      "testScript": "// Set an environment variable\npw.env.set(\"jwt_token_dapur\", pw.response.body[\"jwt_token\"]);",
+      "auth": {
+        "authType": "inherit",
+        "authActive": true
+      },
+      "body": {
+        "contentType": "application/json",
+        "body": "{\n  \"email\": \"dewi.dapur@mbg.id\",\n  \"password\": \"pass123\"\n}"
+      },
+      "requestVariables": [],
+      "responses": {},
+      "_ref_id": "req_mgbmh4mv_7aa909f1-575f-48f8-822e-3dd30cb2c664"
+    }
+  ],
+  "auth": {
+    "authType": "inherit",
+    "authActive": false
+  },
+  "headers": [],
+  "variables": [],
+  "_ref_id": "coll_mg3ejhan_0b607a7d-b82d-4700-a7e0-6f6e454d6653"
+}

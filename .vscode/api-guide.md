@@ -16,7 +16,7 @@ Query Parameters (optional):
 
 Method: POST
 
-```json
+```jsonc
 {
     // example:
     "username": "", // string
@@ -34,7 +34,7 @@ Method: PUT or PATCH
 | --------- | ---------------- | ---------------------------- |
 | id        | number or string | ID of the resource to update |
 
-```json
+```jsonc
 {
     // example:
     "username": "", // string
@@ -48,7 +48,7 @@ Method: PUT or PATCH
 
 Method: DELETE
 
-```json
+```jsonc
 {
     "selected": [1, 2, "abc123"] // array of number or string to be deleted
 }
@@ -60,7 +60,7 @@ Method: DELETE
 
 status code: 200
 
-```json
+```jsonc
 {
     "error": false, // boolean
     "message": "", // string
@@ -73,7 +73,7 @@ status code: 200
 
 status code: 200, 201
 
-```json
+```jsonc
 {
     "error": false, // boolean
     "message": "", // string
@@ -93,7 +93,7 @@ status code: 200, 201
 
 status code: 400, 401, 403, 404, 500
 
-```json
+```jsonc
 {
     "error": true, // boolean
     "message": "", // string (optional) (either message or messages must be present)
