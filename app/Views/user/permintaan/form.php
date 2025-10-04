@@ -1,7 +1,7 @@
 <form id="permintaan-form" class="needs-validation" novalidate>
     <div class="row g-4">
-        <div class="col-lg-6">
-            <div class=" row g-3">
+        <div class="col-12">
+            <div class="row g-3">
                 <div class="col-md-6">
                     <label for="tgl_masak" class="form-label">Tanggal Masak</label>
                     <input type="date" class="form-control" id="tgl_masak" name="tgl_masak" required>
@@ -21,21 +21,19 @@
                 </div>
             </div>
         </div>
-        <div class="col-lg-6 row g-3">
-            <div class="col-12">
-                <div class="d-flex justify-content-between align-items-center mb-3">
-                    <label class="form-label mb-0">Detail Bahan</label>
-                    <button type="button" id="add-detail-bahan" class="btn btn-sm btn-primary">
-                        <i class="bi bi-plus-circle"></i> Tambah Bahan
-                    </button>
-                </div>
-
-                <div id="detail-bahan-error" class="alert alert-danger d-none">
-                    Minimal harus ada 1 bahan yang diminta.
-                </div>
-
-                <div id="detail-bahan-container"></div>
+        <div class="col-12">
+            <div class="d-flex justify-content-between align-items-center mb-3">
+                <label class="form-label mb-0">Detail Bahan</label>
+                <button type="button" id="add-detail-bahan" class="btn btn-sm btn-primary">
+                    <i class="bi bi-plus-circle"></i> Tambah Bahan
+                </button>
             </div>
+
+            <div id="detail-bahan-error" class="alert alert-danger d-none">
+                Minimal harus ada 1 bahan yang diminta.
+            </div>
+
+            <div id="detail-bahan-container"></div>
         </div>
     </div>
 

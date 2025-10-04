@@ -89,7 +89,7 @@
 <?= $this->include('templates/scripts/alert_script') ?>
 
 <!-- SHOW DETAIL -->
-<?= view('templates/fullscreen_modal', [
+<?= view('templates/large_modal', [
     'modalId' => 'show-detail-modal',
     'modalTitle' => 'Detail Permintaan',
     'modalBody' => view('user/permintaan/show'),
@@ -97,7 +97,7 @@
 ]) ?>
 
 <!-- FORM -->
-<?= view('templates/fullscreen_modal', [
+<?= view('templates/large_modal', [
     'modalId' => 'form-modal',
     'modalTitle' => 'Tambah Permintaan Bahan Baku',
     'modalBody' => view('user/permintaan/form'),

@@ -1,5 +1,5 @@
 <div class="row g-4">
-    <div class="col-12 col-lg-4">
+    <div class="col-12">
         <div class="card h-100">
             <div class="card-body">
                 <dl class="row mb-0">
@@ -27,7 +27,7 @@
         </div>
     </div>
 
-    <div class="col-12 col-lg-8">
+    <div class="col-12">
         <div class="card h-100">
             <div class="card-body">
                 <h5 class="card-title">Detail Permintaan (Bahan Baku)</h5>

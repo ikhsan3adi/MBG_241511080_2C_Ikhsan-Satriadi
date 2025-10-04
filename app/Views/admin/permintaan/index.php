@@ -90,7 +90,7 @@
 <?= $this->include('templates/scripts/alert_script') ?>
 
 <!-- SHOW DETAIL -->
-<?= view('templates/fullscreen_modal', [
+<?= view('templates/large_modal', [
     'modalId' => 'show-detail-modal',
     'modalTitle' => 'Detail Permintaan',
     'modalBody' => view('admin/permintaan/show'),

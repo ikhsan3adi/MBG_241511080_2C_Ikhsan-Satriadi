@@ -125,7 +125,7 @@
 <?= $this->include('templates/scripts/alert_script') ?>
 
 <!-- SHOW DETAIL -->
-<?= view('templates/fullscreen_modal', [
+<?= view('templates/large_modal', [
     'modalId' => 'show-detail-modal',
     'modalTitle' => 'Detail Bahan Baku',
     'modalBody' => view('admin/bahanbaku/show'),
@@ -133,7 +133,7 @@
 ]) ?>
 
 <!-- ADD OR EDIT FORM -->
-<?= view('templates/fullscreen_modal', [
+<?= view('templates/large_modal', [
     'modalId' => 'form-modal',
     'modalTitle' => 'Tambah atau Ubah Bahan Baku',
     'modalBody' => view('admin/bahanbaku/form'),
