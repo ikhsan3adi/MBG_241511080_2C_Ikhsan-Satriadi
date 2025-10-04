@@ -91,9 +91,14 @@ $user = currentUser();
 
 <div id="sidebar" class="sidebar d-flex flex-column flex-shrink-0 p-3 bg-body-secondary">
     <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto link-body-emphasis text-decoration-none">
-        <i class="bi bi-fork-knife pe-none me-3" style="font-size: 24pt;"></i>
-        <span class="fs-4">
-            <?= env('app.name.short') ?>
+        <i class="bi bi-fork-knife pe-none me-3" style="font-size: 22pt;"></i>
+        <span class="fs-5">
+            <?php if ($user['role'] == 'gudang'): ?>
+                Gudang
+            <?php elseif ($user['role'] == 'dapur'): ?>
+                Dapur
+            <?php endif; ?>
+            <?= '- ' . env('app.name.short') ?>
         </span>
     </a>
     <hr>

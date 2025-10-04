@@ -33,7 +33,10 @@ $routes->group(
         $routes->group(
             'user',
             ['filter' => ['webrole:dapur']],
-            static function (RouteCollection $routes) {}
+            static function (RouteCollection $routes) {
+                $routes->get('/', 'User\PermintaanController::index');
+                $routes->get('permintaan', 'User\PermintaanController::index');
+            }
         );
     }
 );
@@ -53,24 +56,24 @@ $routes->group(
         //? Role Gudang / Admin
         $routes->group(
             'admin',
-            ['filter' => ['apirole:gudang'], 'namespace' => 'App\Controllers\Api\Admin'],
+            ['filter' => ['apirole:gudang']],
             static function (RouteCollection $routes) {
 
                 //? Resource Bahan Baku
                 $routes->group('bahanbaku', static function (RouteCollection $routes) {
-                    $routes->get('/', 'BahanBakuController::index'); // Mendapatkan bahan baku
-                    $routes->get('(:segment)', 'BahanBakuController::show/$1'); // Mendapatkan detail bahan baku
-                    $routes->post('/', 'BahanBakuController::create'); // Memproses tambah bahan baku
-                    $routes->put('(:segment)', 'BahanBakuController::update/$1'); // Memproses edit bahan baku
-                    $routes->delete('/', 'BahanBakuController::delete'); // Menghapus data bahan baku (individu/massal)
+                    $routes->get('/', 'Admin\BahanBakuController::index'); // Mendapatkan bahan baku
+                    $routes->get('(:segment)', 'Admin\BahanBakuController::show/$1'); // Mendapatkan detail bahan baku
+                    $routes->post('/', 'Admin\BahanBakuController::create'); // Memproses tambah bahan baku
+                    $routes->put('(:segment)', 'Admin\BahanBakuController::update/$1'); // Memproses edit bahan baku
+                    $routes->delete('/', 'Admin\BahanBakuController::delete'); // Menghapus data bahan baku (individu/massal)
                 });
 
                 //? Resource Permintaan
                 $routes->group('permintaan', static function (RouteCollection $routes) {
-                    $routes->get('/', 'PermintaanController::index'); // Mendapatkan permintaan
-                    $routes->get('(:segment)', 'PermintaanController::show/$1'); // Mendapatkan detail permintaan
-                    $routes->post('(:segment)/approve', 'PermintaanController::approve/$1'); // Menyetujui permintaan
-                    $routes->post('(:segment)/reject', 'PermintaanController::reject/$1'); // Menolak permintaan
+                    $routes->get('/', 'Admin\PermintaanController::index'); // Mendapatkan permintaan
+                    $routes->get('(:segment)', 'Admin\PermintaanController::show/$1'); // Mendapatkan detail permintaan
+                    $routes->post('(:segment)/approve', 'Admin\PermintaanController::approve/$1'); // Menyetujui permintaan
+                    $routes->post('(:segment)/reject', 'Admin\PermintaanController::reject/$1'); // Menolak permintaan
                 });
             }
         );
@@ -79,7 +82,20 @@ $routes->group(
         $routes->group(
             'user',
             ['filter' => ['apirole:dapur']],
-            static function (RouteCollection $routes) {}
+            static function (RouteCollection $routes) {
+
+                //? Resource Bahan Baku
+                $routes->group('bahanbaku', static function (RouteCollection $routes) {
+                    $routes->get('/', 'Admin\BahanBakuController::index'); // Mendapatkan bahan baku
+                });
+
+                //? Resource Permintaan
+                $routes->group('permintaan', static function (RouteCollection $routes) {
+                    $routes->get('/', 'User\PermintaanController::index'); // Mendapatkan permintaan
+                    $routes->get('(:segment)', 'User\PermintaanController::show/$1'); // Mendapatkan detail permintaan
+                    $routes->post('/', 'User\PermintaanController::create'); // Memproses tambah permintaan
+                });
+            }
         );
     }
 );
